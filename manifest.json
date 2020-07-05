@@ -1,0 +1,47 @@
+{
+    "name": "Dark - WhatsApp Extension ",
+    "description": "Changes WhatsApp Theme To Dark Mode",
+    "manifest_version": 2,
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "include_globs": [
+                "*://*web.whatsapp.com/*"
+            ],
+            "js": [
+                "script.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/whatsapp-16.png",
+            "32": "images/whatsapp-32.png",
+            "48": "images/whatsapp-48.png",
+            "128": "images/whatsapp-128.png"
+        }
+    },
+    "icons": {
+        "16": "images/whatsapp-16.png",
+        "32": "images/whatsapp-32.png",
+        "48": "images/whatsapp-48.png",
+        "128": "images/whatsapp-128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "*://web.whatsapp.com/*",
+        "webNavigation",
+        "declarativeContent"
+    ]
+}
